@@ -1,0 +1,155 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width " initial-scale="1.0">
+    <title>My First Site</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <header id="titleheader">
+        <nav id="mainnavheader">
+            <div id="sidenavlinks" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+               
+                <a class="navlinks"  href="#aboutus">About us</a>
+                <a class="navlinks"  href="#footer">Contact</a>
+            </div>
+            <div class="row  clearfix">
+
+
+                <img src="images/logo.png" class="logo" />
+
+                <ul class="main-nav">
+                    
+                    <li>
+                        <a class="navlinks" href="#aboutus">about Us</a>
+                    </li>
+                    <li>
+                        <a class="navlinks" href="#footer">Contact</a>
+                    </li>
+                </ul>
+
+                <a onclick="openNav()" class="menubar" id="menubar" href="#">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </a>
+            </div>
+        </nav>
+        <div class="content">
+            <h1>Welcome To This Site</h1>
+            <div class="btndiv">
+                <a class="btn btn-offers" href="#">Offers for you</a>
+                <a class="btn btn-order" href="#">Order</a>
+            </div>
+        </div>
+    </header>
+    <section id="aboutus" class="box section-1">
+        <div class="row">
+            <article class="article-1">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                    nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                    anim id est laborum</p>
+            </article>
+           
+        </div>
+    </section>
+    <section class="section-2">
+        
+      
+        <div class="periscope">
+             
+            
+               
+                 </div>
+              
+                 <h2 style="widows: 600px;text-align: center;position: absolute;bottom:10%;left: 50%;transform: translate(-50%,-50%);">This is test for periscope</h2>
+                 
+               
+         
+            
+    </section>
+    
+    <footer id="footer">
+        <div id="mainfooterdiv" class="row footer-div">
+            <div class="col-footer">
+                <header><h2>Contact us</h2></header>
+                <hr>
+                <br>
+               <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos deleniti voluptatem quidem labore quisquam corporis facere
+                numquam fuga perspiciatis fugit, voluptates, minus esse ipsam cupiditate soluta beatae maxime nemo! Accusamus.
+            </p>
+            </div>
+            <div class="col-footer">
+                <header><h2>other shops</h2></header>
+                <hr>
+                <br>
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos deleniti voluptatem quidem labore quisquam corporis facere
+                        numquam fuga perspiciatis fugit, voluptates, minus esse ipsam cupiditate soluta beatae maxime nemo! Accusamus.
+                </p>
+            </div>
+            <div class="col-footer">
+                <header><h2>Signup for news letter</h2></header>
+                <hr>
+                <br>
+                <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos deleniti voluptatem quidem labore quisquam corporis facere
+                        numquam fuga perspiciatis fugit, voluptates, minus esse ipsam cupiditate soluta beatae maxime nemo! Accusamus.
+            
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+<script> 
+$(document).ready(function(){
+var navheaderHeight=$("#mainnavheader").outerHeight();
+
+
+$('.navlinks').click(function(e){
+    var windowHeight=$('body')[0].scrollHeight;
+   var clickedLinked=$(this).attr("href");
+  if(clickedLinked!=="#footer"){
+
+    $("html,body").animate({
+        scrollTop:$(clickedLinked).offset().top-navheaderHeight
+    },1000)
+
+  }
+  else{
+ console.log("window hei ",windowHeight)
+    $("html,body").animate({
+        scrollTop:windowHeight+navheaderHeight
+    },2000)
+
+  }
+  e.preventDefault();
+})
+
+})
+
+    function showMenus() {
+        let menubar = document.getElementById("menubar");
+        if (menubar.style.visibility === "hidden") {
+
+        }
+    }
+
+    function openNav() {
+        document.getElementById("sidenavlinks").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("sidenavlinks").style.width = "0";
+    }
+
+    
+</script>
+
+</html>
